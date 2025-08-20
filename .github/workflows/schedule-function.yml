@@ -7,7 +7,7 @@ on:
     # This runs the job every 5 minutes.
     # Use crontab.guru to help generate the right cron schedule.
     - cron: '*/5 * * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Corrected: This is now aligned with 'schedule'
     # This allows you to manually trigger the workflow from the Actions tab.
 
 jobs:
