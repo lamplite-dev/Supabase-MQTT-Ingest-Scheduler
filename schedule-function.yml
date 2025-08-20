@@ -1,0 +1,22 @@
+# .github/workflows/schedule-function.yml
+
+name: 'Invoke Supabase Function on Schedule'
+
+on:
+  schedule:
+    # This runs the job every 5 minutes.
+    # Use crontab.guru to help generate the right cron schedule.
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    # This allows you to manually trigger the workflow from the Actions tab.
+
+jobs:
+  invoke-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Call Supabase Function'
+        run: |
+          curl -X POST '${{ secrets.SUPABASE_URL }}' \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{}'
