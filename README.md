@@ -1,0 +1,1 @@
+Was looking at this as a solution to triggering the Supabase edge function on a schedule (say 5 mins) to ingest latest MQTT messgaes. But only ran 15-20 mins and found better solution making the EMQX Broker trigger the ingest instead 
